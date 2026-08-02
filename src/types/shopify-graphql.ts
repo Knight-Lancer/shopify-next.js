@@ -9338,20 +9338,21 @@ export const useCustomerAccessTokenCreateMutation = <
     TContext
   >
 ) => {
-  return useMutation<
-  CustomerAccessTokenCreateMutation,
+ return useMutation<
+  CustomerCreateMutation,
   TError,
-  CustomerAccessTokenCreateMutationVariables,
+  CustomerCreateMutationVariables,
   TContext
 >({
-  mutationKey: ["customerAccessTokenCreate"],
-  mutationFn: (variables) =>
-    fetcher<
-      CustomerAccessTokenCreateMutation,
-      CustomerAccessTokenCreateMutationVariables
-    >(CustomerAccessTokenCreateDocument, variables)(),
+  mutationKey: ["customerCreate"],
+  mutationFn: (variables?: CustomerCreateMutationVariables) =>
+    fetcher<CustomerCreateMutation, CustomerCreateMutationVariables>(
+      CustomerCreateDocument,
+      variables
+    )(),
   ...options,
 });
+};
 
 export const CustomerCreateDocument = `
     mutation customerCreate($input: CustomerCreateInput!) {
@@ -9381,19 +9382,19 @@ export const useCustomerCreateMutation = <TError = unknown, TContext = unknown>(
   >
 ) => {
   return useMutation<
-    CustomerCreateMutation,
-    TError,
-    CustomerCreateMutationVariables,
-    TContext
-  >(
-    ["customerCreate"],
-    (variables?: CustomerCreateMutationVariables) =>
-      fetcher<CustomerCreateMutation, CustomerCreateMutationVariables>(
-        CustomerCreateDocument,
-        variables
-      )(),
-    options
-  );
+  CustomerCreateMutation,
+  TError,
+  CustomerCreateMutationVariables,
+  TContext
+>({
+  mutationKey: ["customerCreate"],
+  mutationFn: (variables?: CustomerCreateMutationVariables) =>
+    fetcher<CustomerCreateMutation, CustomerCreateMutationVariables>(
+      CustomerCreateDocument,
+      variables
+    )(),
+  ...options,
+});
 };
 
 export const GetCartDocument = `
@@ -9496,19 +9497,19 @@ export const useAddToCartMutation = <TError = unknown, TContext = unknown>(
   >
 ) => {
   return useMutation<
-    AddToCartMutation,
-    TError,
-    AddToCartMutationVariables,
-    TContext
-  >(
-    ["addToCart"],
-    (variables?: AddToCartMutationVariables) =>
-      fetcher<AddToCartMutation, AddToCartMutationVariables>(
-        AddToCartDocument,
-        variables
-      )(),
-    options
-  );
+  AddToCartMutation,
+  TError,
+  AddToCartMutationVariables,
+  TContext
+>({
+  mutationKey: ["addToCart"],
+  mutationFn: (variables?: AddToCartMutationVariables) =>
+    fetcher<AddToCartMutation, AddToCartMutationVariables>(
+      AddToCartDocument,
+      variables
+    )(),
+  ...options,
+});
 };
 
 export const UpdateCartItemsDocument = `
@@ -9547,19 +9548,19 @@ export const useUpdateCartItemsMutation = <
   >
 ) => {
   return useMutation<
-    UpdateCartItemsMutation,
-    TError,
-    UpdateCartItemsMutationVariables,
-    TContext
-  >(
-    ["updateCartItems"],
-    (variables?: UpdateCartItemsMutationVariables) =>
-      fetcher<UpdateCartItemsMutation, UpdateCartItemsMutationVariables>(
-        UpdateCartItemsDocument,
-        variables
-      )(),
-    options
-  );
+  UpdateCartItemsMutation,
+  TError,
+  UpdateCartItemsMutationVariables,
+  TContext
+>({
+  mutationKey: ["updateCartItems"],
+  mutationFn: (variables?: UpdateCartItemsMutationVariables) =>
+    fetcher<UpdateCartItemsMutation, UpdateCartItemsMutationVariables>(
+      UpdateCartItemsDocument,
+      variables
+    )(),
+  ...options,
+});
 };
 
 export const RemoveFromCartDocument = `
@@ -9595,19 +9596,19 @@ export const useRemoveFromCartMutation = <TError = unknown, TContext = unknown>(
   >
 ) => {
   return useMutation<
-    RemoveFromCartMutation,
-    TError,
-    RemoveFromCartMutationVariables,
-    TContext
-  >(
-    ["removeFromCart"],
-    (variables?: RemoveFromCartMutationVariables) =>
-      fetcher<RemoveFromCartMutation, RemoveFromCartMutationVariables>(
-        RemoveFromCartDocument,
-        variables
-      )(),
-    options
-  );
+  RemoveFromCartMutation,
+  TError,
+  RemoveFromCartMutationVariables,
+  TContext
+>({
+  mutationKey: ["removeFromCart"],
+  mutationFn: (variables?: RemoveFromCartMutationVariables) =>
+    fetcher<RemoveFromCartMutation, RemoveFromCartMutationVariables>(
+      RemoveFromCartDocument,
+      variables
+    )(),
+  ...options,
+});
 };
 
 export const CreateCartDocument = `
@@ -9644,19 +9645,19 @@ export const useCreateCartMutation = <TError = unknown, TContext = unknown>(
   >
 ) => {
   return useMutation<
-    CreateCartMutation,
-    TError,
-    CreateCartMutationVariables,
-    TContext
-  >(
-    ["createCart"],
-    (variables?: CreateCartMutationVariables) =>
-      fetcher<CreateCartMutation, CreateCartMutationVariables>(
-        CreateCartDocument,
-        variables
-      )(),
-    options
-  );
+  CreateCartMutation,
+  TError,
+  CreateCartMutationVariables,
+  TContext
+>({
+  mutationKey: ["createCart"],
+  mutationFn: (variables?: CreateCartMutationVariables) =>
+    fetcher<CreateCartMutation, CreateCartMutationVariables>(
+      CreateCartDocument,
+      variables
+    )(),
+  ...options,
+});
 };
 
 export const GetCollectionsDocument = `
