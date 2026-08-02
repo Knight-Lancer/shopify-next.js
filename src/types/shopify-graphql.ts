@@ -9337,20 +9337,19 @@ export const useCustomerAccessTokenCreateMutation = <
   >
 ) => {
   return useMutation<
-    CustomerAccessTokenCreateMutation,
-    TError,
-    CustomerAccessTokenCreateMutationVariables,
-    TContext
-  >(
-    ["customerAccessTokenCreate"],
-    (variables?: CustomerAccessTokenCreateMutationVariables) =>
-      fetcher<
-        CustomerAccessTokenCreateMutation,
-        CustomerAccessTokenCreateMutationVariables
-      >(CustomerAccessTokenCreateDocument, variables)(),
-    options
-  );
-};
+  CustomerAccessTokenCreateMutation,
+  TError,
+  CustomerAccessTokenCreateMutationVariables,
+  TContext
+>({
+  mutationKey: ["customerAccessTokenCreate"],
+  mutationFn: (variables) =>
+    fetcher<
+      CustomerAccessTokenCreateMutation,
+      CustomerAccessTokenCreateMutationVariables
+    >(CustomerAccessTokenCreateDocument, variables)(),
+  ...options,
+});
 
 export const CustomerCreateDocument = `
     mutation customerCreate($input: CustomerCreateInput!) {
@@ -9933,19 +9932,19 @@ export const useCustomerUpdateMutation = <TError = unknown, TContext = unknown>(
   >
 ) => {
   return useMutation<
-    CustomerUpdateMutation,
-    TError,
-    CustomerUpdateMutationVariables,
-    TContext
-  >(
-    ["customerUpdate"],
-    (variables?: CustomerUpdateMutationVariables) =>
-      fetcher<CustomerUpdateMutation, CustomerUpdateMutationVariables>(
-        CustomerUpdateDocument,
-        variables
-      )(),
-    options
-  );
+  CustomerAccessTokenCreateMutation,
+  TError,
+  CustomerAccessTokenCreateMutationVariables,
+  TContext
+>({
+  mutationKey: ["customerAccessTokenCreate"],
+  mutationFn: (variables: any) =>
+    fetcher<
+      CustomerAccessTokenCreateMutation,
+      CustomerAccessTokenCreateMutationVariables
+    >(CustomerAccessTokenCreateDocument, variables)(),
+  ...options,
+});
 };
 
 export const GetCustomerOrdersDocument = `
