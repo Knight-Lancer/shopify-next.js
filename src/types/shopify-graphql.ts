@@ -9955,11 +9955,16 @@ export const useCustomerUpdateMutation = <TError = unknown, TContext = unknown>(
   TContext
 >({
   mutationKey: ["customerAccessTokenCreate"],
-  mutationFn: (variables: any) =>
+  mutationFn: (
+    variables: CustomerAccessTokenCreateMutationVariables
+  ) =>
     fetcher<
       CustomerAccessTokenCreateMutation,
       CustomerAccessTokenCreateMutationVariables
-    >(CustomerAccessTokenCreateDocument, variables)(),
+    >(
+      CustomerAccessTokenCreateDocument,
+      variables
+    )(),
   ...options,
 });
 };
