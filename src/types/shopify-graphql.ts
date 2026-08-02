@@ -9457,11 +9457,19 @@ export const useGetCartQuery = <TData = GetCartQuery, TError = unknown>(
   variables: GetCartQueryVariables,
   options?: UseQueryOptions<GetCartQuery, TError, TData>
 ) => {
-  return useQuery<GetCartQuery, TError, TData>(
-    ["getCart", variables],
-    fetcher<GetCartQuery, GetCartQueryVariables>(GetCartDocument, variables),
-    options
-  );
+  return useQuery<
+  GetCartQuery,
+  TError,
+  GetCartQuery,
+  GetCartQueryVariables
+>({
+  queryKey: ["getCart", variables],
+  queryFn: fetcher<GetCartQuery, GetCartQueryVariables>(
+    GetCartDocument,
+    variables
+  ),
+  ...options,
+});
 };
 
 export const AddToCartDocument = `
@@ -9689,16 +9697,17 @@ export const useGetCollectionsQuery = <
   variables?: GetCollectionsQueryVariables,
   options?: UseQueryOptions<GetCollectionsQuery, TError, TData>
 ) => {
-  return useQuery<GetCollectionsQuery, TError, TData>(
+  return useQuery<GetCollectionsQuery, TError, TData>({
+  queryKey:
     variables === undefined
       ? ["GetCollections"]
       : ["GetCollections", variables],
-    fetcher<GetCollectionsQuery, GetCollectionsQueryVariables>(
-      GetCollectionsDocument,
-      variables
-    ),
-    options
-  );
+  queryFn: fetcher<GetCollectionsQuery, GetCollectionsQueryVariables>(
+    GetCollectionsDocument,
+    variables
+  ),
+  ...options,
+});
 };
 
 export const GetCollectionByHandleDocument = `
@@ -9804,14 +9813,17 @@ export const useGetCollectionByHandleQuery = <
   variables: GetCollectionByHandleQueryVariables,
   options?: UseQueryOptions<GetCollectionByHandleQuery, TError, TData>
 ) => {
-  return useQuery<GetCollectionByHandleQuery, TError, TData>(
-    ["GetCollectionByHandle", variables],
-    fetcher<GetCollectionByHandleQuery, GetCollectionByHandleQueryVariables>(
-      GetCollectionByHandleDocument,
-      variables
-    ),
-    options
-  );
+  return useQuery<GetCollectionByHandleQuery, TError, TData>({
+  queryKey: ["GetCollectionByHandle", variables],
+  queryFn: fetcher<
+    GetCollectionByHandleQuery,
+    GetCollectionByHandleQueryVariables
+  >(
+    GetCollectionByHandleDocument,
+    variables
+  ),
+  ...options,
+});
 };
 
 export const GetProductByHandleDocument = `
@@ -9897,14 +9909,17 @@ export const useGetProductByHandleQuery = <
   variables: GetProductByHandleQueryVariables,
   options?: UseQueryOptions<GetProductByHandleQuery, TError, TData>
 ) => {
-  return useQuery<GetProductByHandleQuery, TError, TData>(
-    ["GetProductByHandle", variables],
-    fetcher<GetProductByHandleQuery, GetProductByHandleQueryVariables>(
-      GetProductByHandleDocument,
-      variables
-    ),
-    options
-  );
+  return useQuery<GetProductByHandleQuery, TError, TData>({
+  queryKey: ["GetProductByHandle", variables],
+  queryFn: fetcher<
+    GetProductByHandleQuery,
+    GetProductByHandleQueryVariables
+  >(
+    GetProductByHandleDocument,
+    variables
+  ),
+  ...options,
+});
 };
 
 export const CustomerUpdateDocument = `
@@ -10012,14 +10027,17 @@ export const useGetCustomerOrdersQuery = <
   variables: GetCustomerOrdersQueryVariables,
   options?: UseQueryOptions<GetCustomerOrdersQuery, TError, TData>
 ) => {
-  return useQuery<GetCustomerOrdersQuery, TError, TData>(
-    ["getCustomerOrders", variables],
-    fetcher<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>(
-      GetCustomerOrdersDocument,
-      variables
-    ),
-    options
-  );
+  return useQuery<GetCustomerOrdersQuery, TError, TData>({
+  queryKey: ["getCustomerOrders", variables],
+  queryFn: fetcher<
+    GetCustomerOrdersQuery,
+    GetCustomerOrdersQueryVariables
+  >(
+    GetCustomerOrdersDocument,
+    variables
+  ),
+  ...options,
+});
 };
 
 export const GetCustomerDocument = `
@@ -10038,12 +10056,15 @@ export const useGetCustomerQuery = <TData = GetCustomerQuery, TError = unknown>(
   variables: GetCustomerQueryVariables,
   options?: UseQueryOptions<GetCustomerQuery, TError, TData>
 ) => {
-  return useQuery<GetCustomerQuery, TError, TData>(
-    ["getCustomer", variables],
-    fetcher<GetCustomerQuery, GetCustomerQueryVariables>(
-      GetCustomerDocument,
-      variables
-    ),
-    options
-  );
+  return useQuery<GetCustomerQuery, TError, TData>({
+  queryKey: ["getCustomer", variables],
+  queryFn: fetcher<
+    GetCustomerQuery,
+    GetCustomerQueryVariables
+  >(
+    GetCustomerDocument,
+    variables
+  ),
+  ...options,
+});
 };
