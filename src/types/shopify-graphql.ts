@@ -9460,8 +9460,7 @@ export const useGetCartQuery = <TData = GetCartQuery, TError = unknown>(
   return useQuery<
   GetCartQuery,
   TError,
-  GetCartQuery,
-  GetCartQueryVariables
+  TData
 >({
   queryKey: ["getCart", variables],
   queryFn: fetcher<GetCartQuery, GetCartQueryVariables>(
