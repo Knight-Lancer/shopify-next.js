@@ -9945,7 +9945,10 @@ export const CustomerUpdateDocument = `
 }
     `;
 
-export const useCustomerUpdateMutation = <TError = unknown, TContext = unknown>(
+export const useCustomerUpdateMutation = <
+  TError = unknown,
+  TContext = unknown
+>(
   options?: UseMutationOptions<
     CustomerUpdateMutation,
     TError,
@@ -9954,24 +9957,24 @@ export const useCustomerUpdateMutation = <TError = unknown, TContext = unknown>(
   >
 ) => {
   return useMutation<
-  CustomerAccessTokenCreateMutation,
-  TError,
-  CustomerAccessTokenCreateMutationVariables,
-  TContext
->({
-  mutationKey: ["customerAccessTokenCreate"],
-  mutationFn: (
-    variables: CustomerAccessTokenCreateMutationVariables
-  ) =>
-    fetcher<
-      CustomerAccessTokenCreateMutation,
-      CustomerAccessTokenCreateMutationVariables
-    >(
-      CustomerAccessTokenCreateDocument,
-      variables
-    )(),
-  ...options,
-});
+    CustomerUpdateMutation,
+    TError,
+    CustomerUpdateMutationVariables,
+    TContext
+  >({
+    mutationKey: ["customerUpdate"],
+    mutationFn: (
+      variables: CustomerUpdateMutationVariables
+    ) =>
+      fetcher<
+        CustomerUpdateMutation,
+        CustomerUpdateMutationVariables
+      >(
+        CustomerUpdateDocument,
+        variables
+      )(),
+    ...options,
+  });
 };
 
 export const GetCustomerOrdersDocument = `
