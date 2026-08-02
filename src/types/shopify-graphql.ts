@@ -9339,15 +9339,20 @@ export const useCustomerAccessTokenCreateMutation = <
   >
 ) => {
  return useMutation<
-  CustomerCreateMutation,
+  CustomerAccessTokenCreateMutation,
   TError,
-  CustomerCreateMutationVariables,
+  CustomerAccessTokenCreateMutationVariables,
   TContext
 >({
-  mutationKey: ["customerCreate"],
-  mutationFn: (variables?: CustomerCreateMutationVariables) =>
-    fetcher<CustomerCreateMutation, CustomerCreateMutationVariables>(
-      CustomerCreateDocument,
+  mutationKey: ["customerAccessTokenCreate"],
+  mutationFn: (
+    variables: CustomerAccessTokenCreateMutationVariables
+  ) =>
+    fetcher<
+      CustomerAccessTokenCreateMutation,
+      CustomerAccessTokenCreateMutationVariables
+    >(
+      CustomerAccessTokenCreateDocument,
       variables
     )(),
   ...options,
